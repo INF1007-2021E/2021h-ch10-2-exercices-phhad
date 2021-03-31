@@ -5,8 +5,12 @@
 import csv
 import pandas
 # TODO: Définissez vos fonctions ici
-def read(file):
-    pandas.read_csv(winequality_white.csv)
+def read(path : str="./data/winequality-white.csv"):
+    with open('file.csv') as csv_file:
+        df = csv.reader(csv_file, delimiter=';')
+        x = df["quality"]
+        y = df.drop(columns = ["quality"])
+    return np.array([x,y])
 
 
 
